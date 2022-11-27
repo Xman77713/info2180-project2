@@ -1,0 +1,115 @@
+* {
+	font-family: 'Lato', sans-serif;
+	/*border: 1px solid black;*/
+}
+body {
+	background-color: #FFFFF0;
+	margin: 0;
+	padding: 0;
+}
+header {
+	background-color: #292361;
+	color: white;
+	padding: 0 1%;
+}
+#header-div {
+	padding: 0px;
+	margin: 0px;
+}
+#home-click {
+	display: grid;
+	grid-template-columns: 44% 55%;
+	column-gap: 1%;
+}
+h1 {
+	color: white;
+	font-size: 48px;
+	font-family: 'Jockey One', sans-serif;
+	text-align: left;
+	padding: 5px;
+	margin: 0px}
+#dolphin-logo {
+	margin: auto 0 auto auto;
+}
+a {
+	text-decoration: none;
+}
+
+/*---------------------------------------------------*/
+
+main {
+	padding: 1% auto;
+}
+
+#login-div {
+	display: grid;
+	margin: 1% 35%;
+}
+#login-title {
+	text-align: center;
+	font-size: 36px;
+	margin: 2% 0;
+}
+#login-email, #login-password {
+	height: 36px;
+	border: 1px solid black;
+	border-radius: 50px;
+	padding: 0% 5%;
+	margin: 2% 0;
+	font-size: 18px;
+}
+#login-button {
+	display: grid;
+	grid-template-columns: 10% 78% 10%;
+	column-gap: 1%;
+	height: 36px;
+	background-color: #292361;
+	border: 0;
+	color: white;
+	font-weight: bold;
+	border-radius: 50px;
+	padding: 1% 5%;
+	margin: 2% 0;
+}
+#login-button:hover {
+	background-color: #6963a1;
+}
+#login-button img, #login-button p {
+	margin: auto 0;
+	font-size: 18px;
+}
+#login-padlock {
+	invert: 100%;
+	-webkit-filter: invert(100%);
+	height: margin: auto;
+}
+#login-button-text {
+	font-size: 16px;
+	padding: 0;
+	margin: 0;
+}
+
+
+/*---------------------------------------------------*/
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%
+}
+#footer-div {
+	display: grid;
+	grid-template-columns: 33% 32% 33%;
+	column-gap: 1%;
+}
+#copyright {
+	grid-column: 2;
+	text-align: center;
+}
+#iconsource {
+	grid-column: 3;
+	text-align: center;
+	margin: auto;
+}
+
+
