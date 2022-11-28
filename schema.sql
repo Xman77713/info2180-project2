@@ -19,7 +19,7 @@ CREATE TABLE `Users` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `Users` WRITE;
-INSERT INTO `Users` VALUES (1, 'Pierre', 'Mannix', 'admin@project2.com', 'password123', 'Admin', '2022-11-26 21:40:00');
+INSERT INTO `Users` VALUES (1, 'Pierre', 'Mannix', 'password123', 'admin@project2.com', 'Admin', '2022-11-26 21:40:00');
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Contacts`;
