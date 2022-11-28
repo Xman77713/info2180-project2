@@ -37,8 +37,17 @@ a {
 
 /*---------------------------------------------------*/
 
+
 main {
 	padding: 1% auto;
+}
+
+.again-hide{
+	visibility: hidden;
+}
+
+.again-show{
+	visibility:visible
 }
 
 #login-div {

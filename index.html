@@ -23,11 +23,16 @@
 
 		<main>
 			<div id="login-div">
-				<h2 id="login-title">Login</h2>
+				<!--PATH MAY BE DIFFERENT FOR YOU-->
+				<form action="http://localhost/info2180-project2/login.php" method="POST" id = "form">
+					<h2 id="login-title">Login</h2>
 				<input id="login-email" type="text" name="LoginEmail" placeholder="Email address" />
 				<input id="login-password" type="text" name="LoginPassword" placeholder="Password" />
-				<button id="login-button"><img id="login-padlock" src="padlock.png" height="18px" /> <p id="login-button-text">Login</p></button>
+				<input type="submit" value="Login" id="login-button" name = "submit">
+				<!-- <button id="login-button"><img id="login-padlock" src="padlock.png" height="18px" /> <p id="login-button-text">Login</p></button>-->
+				</form>
 			</div>
+			<p id = "again" class="again-hide">TRY AGAIN</p>
 		</main>
 		
 		<footer>
