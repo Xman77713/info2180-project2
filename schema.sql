@@ -52,3 +52,5 @@ CREATE TABLE `Notes` (
   FOREIGN KEY (`contact_id`) REFERENCES `Contacts`(`id`),
   FOREIGN KEY (`created_by`) REFERENCES `Users`(`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+GRANT ALL PRIVILEGES ON dolphin_crm.* TO 'project2_user'@'localhost' IDENTIFIED BY 'password123';
