@@ -18,7 +18,8 @@ $(document).ready(function() {
 					$("#login-error").html("Incorrect Password")
 				}
 				else {
-					$("#login-div").empty();
+					$("#login-error").empty();
+					$("#login-div").hide();
 					$("#db-div").append(data);
 					menuInteract();
 				}
@@ -28,16 +29,27 @@ $(document).ready(function() {
 	function menuInteract() {
 		$("aside li").click(function() {
 			selection = $(this).text();
-			$.post("navmenu.php",
-			{
-				menu_selection: selection
-			},
-			function(data, status) {
-				console.log("Data: " + data + "\nStatus: " + status);
-				$("#db-div section").remove();
-				$("#db-div").append(data);
+			if (selection != $("#db-div section").attr("name")) {
+				$.post("navmenu.php",
+				{
+					menu_selection: selection
+				},
+				function(data, status) {
+					console.log("Data: " + data + "\nStatus: " + status);
+					if (data == "ERROR") {
+						alert("ERROR!");
+					}
+					else if (data == "log out") {
+						$("#db-div").empty();
+						$("#login-div").show();
+					}
+					else {
+						$("#db-div section").remove();
+						$("#db-div").append(data);
+					}
+				});
 			}
-			)
+			
 		});
 	}
 	/*function menustuff()

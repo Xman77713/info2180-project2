@@ -9,12 +9,8 @@ $dbpassword = 'password123';
 $dbname = 'dolphin_crm';
 
 $conn = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8mb4", $dbusername, $dbpassword);
-$regex_password = "/(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/";
-/*echo "hello 1<br>";
 
-echo "{$_POST['login_password']}<br>";
-echo "{$_POST['login_email']}<br>";*/
-if(isset($_POST["login_email"])) {
+if(isset($_POST['login_email'])) {
 	$password = filter_var($_POST['login_password'], FILTER_SANITIZE_STRING);
 	$email = filter_var($_POST['login_email'], FILTER_SANITIZE_EMAIL);
 	$query = "SELECT * FROM Users WHERE Users.email = '{$email}'";
@@ -22,7 +18,7 @@ if(isset($_POST["login_email"])) {
 	$results = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	
 	if (sizeof($results) == 1) {
-		if ($results[0]["password"] ==  $password) {
+		if ($results[0]['password'] == $password) {
 			$_SESSION['userid'] = $results[0]['id'];
 			$_SESSION['userfirstname'] = $results[0]['firstname'];
 			$_SESSION['userlastname'] = $results[0]['lastname'];
@@ -33,7 +29,7 @@ if(isset($_POST["login_email"])) {
 			include 'home.php';
 		}
 		else {
-			echo "PASSWORD_ERROR";
+			echo 'PASSWORD_ERROR';
 		}
 	}
 	else {

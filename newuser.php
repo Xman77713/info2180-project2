@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$regex_password = "/(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/";
+
 if (isset($_SESSION['userrole'])) {
 	echo "id of {$_SESSION['useremail']} is: {$_SESSION['userid']}<br>";
 }

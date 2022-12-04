@@ -1,7 +1,7 @@
 <?php
 echo '
 <!-- Users -->
-<section>
+<section name="Users">
 	<!--style="display: none;"-->
 	<div id="db-users-header" class="dbdiv-header">
 		<h2>Users</h2>

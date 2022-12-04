@@ -1,7 +1,7 @@
 <?php
 echo '
 <!-- New Contact Form -->
-<section>
+<section name="New Contact">
 	<div id="db-newcontact-header" class="dbdiv-header">
 		<h2>New Contact</h2>
 	</div>
