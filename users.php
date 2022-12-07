@@ -5,7 +5,7 @@ echo '
 	<!--style="display: none;"-->
 	<div id="db-users-header" class="dbdiv-header">
 		<h2>Users</h2>
-		<input type="button" name="adduser" value="+	Add User">
+		<input type="button" id = "add_user" name="adduser" value="+	Add User">
 	</div>
 
 	<table>

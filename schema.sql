@@ -20,6 +20,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 INSERT INTO `Users` VALUES (1, 'Pierre', 'Mannix', 'password123', 'admin@project2.com', 'Admin', '2022-11-26 21:40:00');
+INSERT INTO `Users` VALUES (2, 'Jonathan', 'Astwood', 'MadSick20', 'admin2@project2.com', 'Admin', '2022-12-01 21:40:00');
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Contacts`;
@@ -40,6 +41,13 @@ CREATE TABLE `Contacts` (
   FOREIGN KEY (`assigned_to`) REFERENCES `Users`(`id`),
   FOREIGN KEY (`created_by`) REFERENCES `Users`(`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES `Contacts` WRITE;
+INSERT INTO `Contacts` VALUES(1, 'Mr.', 'Goofy', 'Lookin', 'goofylookin@project2.com', '722-1234','Uwi Patty Co.', 'SALES LEAD', 2,2, '2022-12-03 14:13:00','2022-12-03 14:13:00');
+INSERT INTO `Contacts` VALUES(2, 'Dr.', 'Bob', 'Farley', 'jahbob@project2.com', '722-4321','The Lord Inc.', 'SALES LEAD', 2,2, '2022-12-03 14:13:00','2022-12-03 14:13:00');
+INSERT INTO `Contacts` VALUES(3, 'Ms.', 'Justine', 'Beaver', 'b4justine@project2.com', '1-800-1234','Uwi Patty Co.', 'SALES LEAD', 2,2, '2022-12-03 14:13:00','2022-12-03 14:13:00');
+INSERT INTO `Contacts` VALUES(4, 'Prof.', 'Krah', 'Khead', 'seekhelp@project2.com', '1-800-4321','Uwi Patty Co.', 'SALES LEAD', 2,2, '2022-12-03 14:13:00','2022-12-03 14:13:00');
+UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Notes`;
 CREATE TABLE `Notes` (

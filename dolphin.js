@@ -46,28 +46,84 @@ $(document).ready(function() {
 					else {
 						$("#db-div section").remove();
 						$("#db-div").append(data);
+						switch(selection) {
+							case "Home":
+								homelogic();
+								break;
+							case "New Contact":
+								newcontactlogic();
+								break;
+							case "Users":
+								userlogic();
+								break;
+							
+						}
 					}
 				});
 			}
+		});
+	}
+	function homelogic() {
+		$("#db-home-header input").click(function() {
+			
+		});
+		$("#filter input['type=button']").click(function() {
+			
+		});
+		$("#db-home-table input['value=View']").click(function() {
 			
 		});
 	}
-	/*function menustuff()
-	if($("#db-div").html()) {
-		console.log($("#db-div"));
-		$("#db-div img").click(function(){
-			$.post("newuser.php",
+	function newcontactlogic() {
+		$("#savenewcontact").click(function() {
+			console.log("Button Clicked!");
+			$.post("contactlogic.php",
 			{
-				login_emails: "hi@email.com",
-				login_passwords: "passwordy"
+				first_name: $("#first_name").val(),
+				last_name: $("#last_name").val(),
+				title: $("#title").val(),
+				email: $("#email").val(),
+				phone: $("#phone").val(),
+				company: $("#company").val(),
+				type: $("#type").val(),
 			},
+
 			function(data,status){
 				console.log("Data: " + data + "\nStatus: " + status);
-				$("#db-div").append(data)
+
 			});
 		});
 	}
-	else {
-		console.log("db div is not there");
-	}*/
+	function userlogic() {
+		$("#add_user").click(function() {
+			console.log("hey");
+			$.post("newuser.php",
+			{
+				loginemail1: loginemail1,
+				loginpassword1: loginpassword1
+			},
+			function(data, status) {
+				console.log("Data: " + data + "\nStatus: " + status);
+				$("#db-div").append(data);
+				$("#newusersave").click(function() {
+
+					console.log("BOO");
+					$.post("adduserlogic.php",
+						{
+					
+							loginemail1: $("#email").val(),
+							loginpassword1: $("#password").val(),
+							fname: $("#fname").val(),
+							lname: $("#lname").val()
+						},
+						function(data, status) {
+							console.log("Data: " + data + "\nStatus: " + status);})
+				
+				
+				});
+			})
+		});
+	}
+	
+	
 });

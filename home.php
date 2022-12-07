@@ -1,4 +1,15 @@
 <?php
+$host = 'localhost';
+$dbusername = 'project2_user';
+$dbpassword = 'password123';
+$dbname = 'dolphin_crm';
+
+$conn = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8mb4", $dbusername, $dbpassword);
+$query = "SELECT * FROM Contacts";
+// $query = "SELECT * FROM Users";
+$stmt = $conn->query($query);
+$results = $stmt->fetchALL(PDO::FETCH_ASSOC);
+
 echo '
 <!-- Dashboard Home -->
 <section name="Home">
@@ -24,17 +35,20 @@ echo '
 		<th>Email</th>
 		<th>Company</th>
 		<th>Type</th>
-		<th></th>
+		<th></th>';
+		
+		// echo var_dump($results);
+		foreach($results as $row){
+			echo '<tr>';
+			echo '<td>'.$row["title"]." ".$row["firstname"]." ".$row["lastname"]."</td>";
+			echo '<td>'.$row["email"].'</td>';
+			echo '<td>'.$row["company"].'</td>';
+			echo '<td>'.$row["contact_type"].'</td>';
+			echo '<td><input type="button" value="View"></td>';
+			echo '</tr>';
+		}
 
-		<tr>
-			<td>A name</td>
-			<td>An email</td>
-			<td>UWI Patty Co.</td>
-			<td>A type</td>
-			<td><input type="button" value="View"></td>
-		</tr>
-	</table>
-
+		echo '</table>
 </section>
 '
 ?>
